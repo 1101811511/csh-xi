@@ -8,18 +8,6 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 public abstract class BaseActivity extends RxAppCompatActivity {
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        initView();
-        initData();
-    }
-
-    protected abstract void initView();
-
-    protected abstract void initData();
-
     /**
      * 如：Button btn = $(R.id.btn);
      */

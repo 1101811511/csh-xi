@@ -9,10 +9,10 @@ import com.swipe.demo.activity.BaseActivity;
  * Created by Administrator on 2017/5/11.
  */
 public class BaseFragment extends Fragment {
-    BaseActivity mActivtiy;
+    BaseActivity mActivity;
     @Override
     public void onAttach(Activity activity) {
-        mActivtiy =(BaseActivity) activity;
+        mActivity =(BaseActivity) activity;
         super.onAttach(activity);
     }
 }

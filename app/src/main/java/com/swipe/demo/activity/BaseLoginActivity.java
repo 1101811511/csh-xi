@@ -35,16 +35,6 @@ public class BaseLoginActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
-
-    }
-
-    @Override
-    protected void initData() {
-
-    }
-
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 

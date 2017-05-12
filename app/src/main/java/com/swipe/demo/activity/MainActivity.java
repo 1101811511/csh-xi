@@ -1,6 +1,5 @@
 package com.swipe.demo.activity;
 
-
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -21,17 +20,18 @@ public class MainActivity extends BaseLoginActivity {
     private MainFragment[] fragments;
 
     @InjectView(R.id.tabLayout)
-    TabLayout tableLayout;
+    private TabLayout tableLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+
         initView();
+        initData();
     }
 
-    @Override
     protected void initView() {
         ButterKnife.inject(this);
         //获取LayoutInflater 来加载布局
@@ -65,7 +65,6 @@ public class MainActivity extends BaseLoginActivity {
         });
     }
 
-    @Override
     protected void initData() {
 
     }

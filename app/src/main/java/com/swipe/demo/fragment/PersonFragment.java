@@ -43,7 +43,7 @@ public class PersonFragment extends BaseFragment {
             case R.id.btn:
 //                mListener = new BaseUiListener();
 //                tencent.login(getActivity(),"all",mListener);
-                ((MainActivity)mActivtiy).loginQQ();
+                ((MainActivity) mActivity).loginQQ();
                 break;
         }
     }
