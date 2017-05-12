@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">swipeDemo</string>
+    <string name="first_tab">首页</string>
+    <string name="new_tab">新闻</string>
+    <string name="book_tab">书籍</string>
+    <string name="person_tab">个人</string>
+</resources>
