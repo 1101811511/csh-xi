@@ -7,7 +7,7 @@ import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 
-import utils.Logger;
+import com.swipe.demo.utils.Logger;
 
 public class BaseLoginActivity extends BaseActivity {
     private static String TAG = "SwipeDemo";

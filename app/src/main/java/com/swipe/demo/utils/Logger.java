@@ -1,4 +1,4 @@
-package utils;
+package com.swipe.demo.utils;
 
 import android.text.TextUtils;
 import android.util.Log;
