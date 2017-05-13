@@ -44,5 +44,8 @@ public class BaseLoginActivity extends BaseActivity {
         Tencent tencent = Tencent.createInstance("1106159254", this);
         tencent.login(this, "all", mListener);
     }
+    public  void  getUserInfo(){
+
+    }
 
 }
