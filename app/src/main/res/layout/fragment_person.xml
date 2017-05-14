@@ -16,4 +16,11 @@
         android:text="测试"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/getIamge"
+        android:layout_width="wrap_content"
+        android:text="获取图片"
+        android:layout_below="@+id/btn"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

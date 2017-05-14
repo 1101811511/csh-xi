@@ -3,6 +3,7 @@ package com.swipe.demo.activity;
 import android.content.Intent;
 import android.widget.Toast;
 
+import com.tencent.connect.UserInfo;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
@@ -12,6 +13,7 @@ import utils.Logger;
 public class BaseLoginActivity extends BaseActivity {
     private static String TAG = "SwipeDemo";
     private IUiListener mListener;
+    private  Tencent tencent;
 
     {
         mListener = new IUiListener() {
@@ -37,15 +39,16 @@ public class BaseLoginActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        Tencent.onActivityResultData(requestCode , resultCode, data, mListener);
     }
 
     public void loginQQ() {
-        Tencent tencent = Tencent.createInstance("1106159254", this);
+        tencent = Tencent.createInstance("1106159254", this);
         tencent.login(this, "all", mListener);
+//        tencent.getQQToken()
     }
     public  void  getUserInfo(){
-
+//        UserInfo userInfo = new UserInfo(BaseLoginActivity.this,)
     }
 
 }

@@ -7,23 +7,36 @@ import com.swipe.demo.R;
 import com.swipe.demo.activity.MainActivity;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.UiError;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import okhttp3.Call;
+import okhttp3.Request;
+import utils.Logger;
 
 /**
  * Created by Administrator on 2017/5/11.
  */
 public class PersonFragment extends BaseFragment {
     @InjectView(R.id.btn)
-    public Button btn;
+     Button btn;
+    @InjectView(R.id.getIamge)
+    Button button;
+    private String url = "http://gank.io/api/data/Android/10/1";
+    private  static  final  String TAG ="PersonFragment";
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,36 +47,72 @@ public class PersonFragment extends BaseFragment {
     }
 
     private void initView() {
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OkHttpUtils.get()
+                        .url(url)
+                        .tag(this)
+                        .build()
+                        .connTimeOut(20000)
+                        .readTimeOut(20000)
+                        .writeTimeOut(20000)
+                        .execute(new MyStringCallback() );
+            }
+        });
     }
+    public class MyStringCallback extends StringCallback
+    {
+        @Override
+        public void onBefore(Request request, int id)
+        {
+//            setTitle("loading...");
+        }
+
+        @Override
+        public void onAfter(int id)
+        {
+//            setTitle("Sample-okHttp");
+        }
+
+        @Override
+        public void onError(Call call, Exception e, int id)
+        {
+            e.printStackTrace();
+
+        }
+
+        @Override
+        public void onResponse(String response, int id)
+        {
+            Log.e(TAG, "onResponse：complete");
+           Logger.e("onResponse:" + response);
+
+            switch (id)
+            {
+                case 100:
+                    Toast.makeText(getContext(), "http", Toast.LENGTH_SHORT).show();
+                    break;
+                case 101:
+                    Toast.makeText(getContext(), "https", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
 
 
     @OnClick({R.id.btn})
     public void onClick(View v){
         switch (v.getId()){
             case R.id.btn:
-//                mListener = new BaseUiListener();
-//                tencent.login(getActivity(),"all",mListener);
-                ((MainActivity) mActivity).loginQQ();
+              ((MainActivity) mActivity).loginQQ();
+
+
+                break;
+            case R.id.getIamge:
+
                 break;
         }
     }
-    private class BaseUiListener implements IUiListener{
-
-        @Override
-        public void onComplete(Object o) {
-            Toast.makeText(getContext(), "授权成功", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onError(UiError uiError) {
-            Toast.makeText(getContext(), "授权失败", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onCancel() {
-            Toast.makeText(getContext(), "授权取消", Toast.LENGTH_SHORT).show();
-        }
-    }
 
 
-}
+}}

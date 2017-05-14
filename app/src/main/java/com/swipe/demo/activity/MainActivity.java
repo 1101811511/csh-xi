@@ -20,7 +20,7 @@ public class MainActivity extends BaseLoginActivity {
     private MainFragment[] fragments;
 
     @InjectView(R.id.tabLayout)
-    private TabLayout tableLayout;
+   TabLayout tableLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

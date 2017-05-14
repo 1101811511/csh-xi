@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "com.swipe.demo"
+//        applicationId "com.swipe.demo"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -23,21 +23,17 @@ def SUPPORT_VERSION = '25.3.1'
 
 dependencies {
     testCompile 'junit:junit:4.12'
-
     compile fileTree(include: ['*.jar'], dir: 'libs')
-
     compile files('libs/mta-sdk-1.6.2.jar')
     compile files('libs/open_sdk_r5778_lite.jar')
-
     compile 'com.android.support:support-v4:' + SUPPORT_VERSION
     compile 'com.android.support:recyclerview-v7:' + SUPPORT_VERSION
     compile 'com.android.support:design:' + SUPPORT_VERSION
     compile 'com.android.support:appcompat-v7:' + SUPPORT_VERSION
-
     compile 'io.reactivex:rxjava:1.0.14'
     compile 'io.reactivex:rxandroid:1.0.1'
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'com.trello:rxlifecycle-components:1.0'
-    compile 'com.squareup.okhttp3:okhttp:3.7.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile project(path: ':okhttputils')
 }
