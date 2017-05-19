@@ -35,5 +35,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'com.trello:rxlifecycle-components:1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile project(path: ':okhttputils')
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile project(':okhttputils')
 }
