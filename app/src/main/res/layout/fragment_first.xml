@@ -2,11 +2,40 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="20sp"
-        android:text="首頁"
-        />
+    <LinearLayout
+        android:id="@+id/life_tile"
+        android:background="#fa4c99f7"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/back_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="#ffffff"
+            android:text="生活"/>
+
+    </LinearLayout>
+    <GridView
+        android:layout_below="@+id/life_tile"
+        android:id="@+id/life_grid"
+        android:numColumns="2"
+        android:background="#DCDCDC"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </GridView>
+    <GridView
+        android:layout_marginTop="30dp"
+        android:numColumns="4"
+        android:background="#ffffff"
+        android:layout_below="@+id/life_grid"
+        android:id="@+id/web_load"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </GridView>
 </RelativeLayout>
